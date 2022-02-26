@@ -26,6 +26,7 @@ const users = [
   },
 ];
 
+// eg 1:
 const output = users.reduce((acc, curr) => {
   if (acc[curr.age]) {
     acc[curr.age] = ++acc[curr.age];
@@ -36,3 +37,13 @@ const output = users.reduce((acc, curr) => {
 }, {});
 
 console.log(output); // {30: 1, 69: 1, 89: 2, 97: 1}
+
+// eg 2:
+const output = users.reduce((acc, curr) => {
+  if (curr.age < 80) {
+    acc = [...acc, curr.firstName];
+  }
+  return acc;
+}, []);
+
+console.log(output); // ['John', 'Griffin']
