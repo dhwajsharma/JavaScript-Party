@@ -1,17 +1,18 @@
-// Current element, its index, and the context should be passed as an argument to the callback function.
+// Current element, its index, and the array should be passed as an argument to the callback function.
 
-Array.prototype.myMap = function(callback){
-	let temp = [];
-	for(let i = 0; i < this.length; i++){
-		temp.push(callback(this[i], i, this));
-	}
-	return temp;
+let cities = [
+  "jaipur",
+  "Delhi",
+  "Kanpur",
+  "Indore"
+]
+
+Array.prototype.myMap = function(callback) {
+  let finalArray = [];
+  for (let i = 0; i < this.length; i++) {
+    finalArray.push(callback(this[i], i, this));
+  }
+  return finalArray;
 }
 
-const nums = [1,2,3,4];
-
-const output = nums.myMap((num, i, arr) => {
-	return num*2;
-})
-
-console.log(output)
+let result = cities.myMap(c => console.log(c)); 
