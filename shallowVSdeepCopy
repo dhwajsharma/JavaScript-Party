@@ -1,0 +1,22 @@
+// What's shallow copy and deep copy?
+
+// shallow - when one object holds the reference to the another object.
+
+// deep - completely clone an object to a variable
+
+let user = {
+  name: "Dhwaj",
+  age: 21
+};
+
+// method 1
+const deepCopy = Object.assign({}, user);
+
+// method 2
+const deepCopy = JSON.parse(JSON.stringify(user));
+
+// method 3
+const deepCopy = { ...user };
+deepCopy.name = "Astitva";
+
+console.log(user, deepCopy);
